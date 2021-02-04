@@ -8,8 +8,11 @@
     "url": "git://github.com/v21/tracery.git"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "npx typescript ./tracery.ts --declaration --emitDeclarationOnly"
   },
   "author": "Kate Compton (packaged by v21)",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^14.14.24"
+  }
 }
