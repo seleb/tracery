@@ -14,7 +14,7 @@ function escapeRegExp(str: string) {
 	return str.replace(/([.*+?^=!:${}()|\[\]\/\\])/g, '\\$1');
 }
 
-type Settings = {
+interface Settings {
 	raw?: string;
 	type?: number;
 };
@@ -351,26 +351,6 @@ class TraceryRuleSet {
 			this.defaultUses = [];
 		}
 	}
-}
-
-function fyshuffle<T>(array: T[]) {
-	var currentIndex = array.length,
-		temporaryValue,
-		randomIndex;
-
-	// While there remain elements to shuffle...
-	while (0 !== currentIndex) {
-		// Pick a remaining element...
-		randomIndex = Math.floor(Math.random() * currentIndex);
-		currentIndex -= 1;
-
-		// And swap it with the current element.
-		temporaryValue = array[currentIndex];
-		array[currentIndex] = array[randomIndex];
-		array[randomIndex] = temporaryValue;
-	}
-
-	return array;
 }
 
 class TracerySymbol {
